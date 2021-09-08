@@ -33,13 +33,17 @@ spec:
         name: fluxcdbot
         args:
         - --token=$(TOKEN)
-        - --url=http://fluxcdbot.default.svc.cluster.local
+        - --url=http://fluxcdbot.$(NAMESPACE).svc.cluster.local:8080
         env:
         - name: TOKEN
           valueFrom:
             secretKeyRef:
               name: fluxcdbot
               key: token
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
         ports:
         - containerPort: 8080
           name: http
