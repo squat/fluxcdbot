@@ -61,7 +61,7 @@ kubectl create secret generic fluxcdbot --from-literal=token=<telegram-token>
 Finally, deploy the example manifest included in this repository, modifying the base URL as needed:
 
 ```shell
-kubectl apply -f https://raw.githubusercontent.com/squat/fluxcdbot/master/manifest.yaml
+kubectl apply -f https://raw.githubusercontent.com/squat/fluxcdbot/main/manifests/fluxcdbot.yaml
 ```
 
 ## Usage
